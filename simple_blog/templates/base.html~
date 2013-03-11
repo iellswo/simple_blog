@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/static/style.css" />
+    
     <title>
-    {% block title %}The Dlog - A Simple Blog Made With Django!{% block title %}
+    {% block title %}The Dlog - A Simple Blog Made With Django!{% endblock %}
     </title>
 </head>
 <body id="body">
     <div id="title">
     {% block visualtitle %}
     This is a Blog!
-    {% block visualtitle %}
+    {% endblock %}
     </div>
     
     <div id="menu">
@@ -23,6 +23,6 @@
     
     {% block content %}
     {% endblock %}
-    
+    <link rel="stylesheet" href="/static/style.css" />
 </body>
 </html>

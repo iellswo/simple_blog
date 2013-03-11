@@ -14,9 +14,8 @@ class Comment(models.Model):
     name = models.CharField(max_length=80)
     email = models.EmailField()
     def __unicode__(self):
-        return self.content
+        return self.name
     
 class CommentForm(forms.Form):
     class Meta:
         model = Comment
-
