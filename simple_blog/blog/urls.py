@@ -7,7 +7,6 @@ admin.autodiscover()
 urlpatterns = patterns('blog.views',
     url(r'^$', 'index'),                  
     url(r'^post/(?P<index>\d+)/$', 'post'),
-    url(r'^post/(?P<post>\d+)/comment/(?P<index>\d+)/$', 'comment'),
     url(r'^post/(?P<post>\d+)/comment/add/$', 'comment_add'),
     )
     

@@ -40,24 +40,24 @@ html {
 /*  float: left; /* LTR */
     display: inline;
     padding: 0 20px 0 0; /* LTR */
-    color: #6FBFFE;
+    color: #4C2F31;
     font-weight: bold;
 }
 
 
 #menu li a {
     text-decoration: none;
-    color: #6FBFFE;
+    color: #4C2F31;
 }
 
 #menu li a:hover {
-    color: #1892DB;
-    border-bottom: 2px solid #1892DB;
+    color: #4C2F31;
+    border-bottom: 2px solid #4C2F31;
 }
 
 #menu li a:current {
-    color: #1892DB;
-    border-bottom: 2px solid #1892DB;
+    color: #4C2F31;
+    border-bottom: 2px solid #4C2F31;
 }
 
 #content {
@@ -78,11 +78,13 @@ html {
 
 .post_header {
     width:500px;
+    height:80px;
     background:#826867;
     border-width:2px;
     border-style:ridge;
     border-color:#1892DB;
     border-radius:15px;
+    margin-bottom:20px;
 }
 
 .post_header h2 {
@@ -108,5 +110,36 @@ html {
     border-color:#826867;
     border-radius:15px;
     padding: 15px 15px 15px 15px;
-    margin-bottom:20px;
+    margin-bottom:40px;
+}
+
+.comment_counter {
+    padding: 5px 5px 5px 5px;
+    font-size:.8em;
+}
+
+.comment_counter a {
+    color: #1892DB;
+}
+
+.comment_counter a:hover {
+    color: #362BCE;
+}
+
+.comment_counter a:current {
+    color: #362BCE;
+}
+
+.comment_box {
+    margin-left:25px;
+}
+
+.comment_body {
+    background:#826867;
+    border-width:2px;
+    border-style:ridge;
+    border-color:#1892DB;
+    border-radius:15px;
+    padding: 10px 10px 10px 10px;
+    color:#17111D;
 }

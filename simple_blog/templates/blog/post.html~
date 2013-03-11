@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="post_header">
+    <h2><a href="post/{{ post.id }}">{{ post.title }}</a></h2>
+    <div class="posted">posted on {{ post.pub_date }}</div>
+</div>
+<div class="post_body">
+    {{ post.content }}
+</div>
+{% if comments %}
+    {% for comment in comments %}
+    <div class="comment_box">
+    {{ comment.name }} said:
+    {{ comment.content }}
+    </div>
+    {% endfor %}
+{% else %}
+    No Comments
+{% endif %}
+
+{% endblock %}
