@@ -72,7 +72,7 @@ html {
     border-color:#826867;
     border-radius:15px;
     float:right;
-    height:750px;
+    height:1000px;
     width: 20%;
 }
 

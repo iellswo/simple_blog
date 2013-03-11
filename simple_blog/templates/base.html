@@ -6,23 +6,36 @@
     {% block title %}The Dlog - A Simple Blog Made With Django!{% endblock %}
     </title>
 </head>
-<body id="body">
-    <div id="title">
-    {% block visualtitle %}
-    This is a Blog!
-    {% endblock %}
-    </div>
+<body>
+    <div id="wrapper">
+    <br>
     
-    <div id="menu">
-    {% block menu %}
-    <ul>
-        <li><a href="/blog/">Home</a></li>
-    </ul>
-    {% endblock %}
-    </div>
+        <div id="title">
+        {% block visualtitle %}
+        This is a Blog!
+        {% endblock %}
+        </div>
+        <br>
+        <div id="menu">
+        {% block menu %}
+        <ul>
+            <li><a href="/blog/">Home</a></li>
+        </ul>
+        {% endblock %}
+        </div>
+        
+        <br><br>
+        
+        <div id="sidebar">
+        <p>this is the sidebar.</p>
+        </div>
+        
+        <div id="content">
+        {% block content %}
+        {% endblock %}
+        </div>
     
-    {% block content %}
-    {% endblock %}
+    </div>
     <link rel="stylesheet" href="/static/style.css" />
 </body>
 </html>

@@ -10,6 +10,7 @@ urlpatterns = patterns('blog.views',
     url(r'^post/(?P<post>\d+)/comment/(?P<index>\d+)/$', 'comment'),
     url(r'^post/(?P<post>\d+)/comment/add/$', 'comment_add'),
     )
+    
 urlpatterns += patterns('',
     url(r'^static/(?P<path>.*)$',
          'django.views.static.serve',

@@ -6,7 +6,7 @@ from django.shortcuts import render
 from blog.models import *
 
 def index(request):
-    posts = Post.objects.all().order_by('pub_date')[:5]
+    posts = Post.objects.all().order_by('-pub_date')[:5]
     return render(request, 'blog/index.html', {'posts':posts})
     
 def post(request, index):
