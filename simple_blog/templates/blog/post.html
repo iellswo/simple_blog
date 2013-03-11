@@ -27,3 +27,66 @@
 </form>
 
 {% endblock %}
+
+{% block scripts %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+
+(function() {
+
+$('html').addClass('js');
+
+var contactForm = {
+
+    container: $('#contact'),
+    
+    config: {
+        effect: 'slideToggle',
+        speed: 500
+    },
+
+    init: function(config) {
+        $.extend(this.config, config);
+        
+        $('<button></button>', {
+            text: 'Contact Me'
+        })
+            .insertAfter('article:first')
+            .on('click', this.show);
+    },
+    
+    show: function() {
+        var cf = contactForm,
+            container = cf.container,
+            config = cf.config;
+            
+        if ( container.is(':hidden') ) {
+            contactForm.close.call(container);
+            container[config.effect](config.speed);
+        }
+    },
+    
+    close: function() {
+        var $this = $(this); // #contact
+        
+        if ( $this.find('span.close').length ) return;
+        
+        $('<span class=close>X</span>')
+            .prependTo(this)
+            .on('click', function() {
+                $this[contactForm.config.effect](contactForm.config.speed);
+            })
+    }
+};
+
+contactForm.init({
+    speed: 300
+});
+
+})();
+
+
+</script> 
+
+{% endblock %}
