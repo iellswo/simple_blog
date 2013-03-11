@@ -17,9 +17,22 @@ def index(request):
 def post(request, index):
     p = get_object_or_404(Post, pk=index)
     comments = Comment.objects.filter(post=p)
-    return render(request, 'blog/post.html', {'post':p, 'comments':comments})
+    form = CommentForm()
+    return render(request, 'blog/post.html', {'post':p, 'comments':comments, 'form':form})
 
     
 def comment_add(request, post):
-    raise Http404    
-
+    if request.method == 'GET':
+        form = CommentForm()
+        return render(request, 'blog/add_comment.html', {'form':form, 'id':post})
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if not form.is_valid():
+            return render(request, 'blog/add_comment.html', {'form':form, 'id':post})
+        c = Comment()
+        c.post = get_object_or_404(Post, pk=post)
+        c.content = form.cleaned_data['content']
+        c.name = form.cleaned_data['name']
+        c.email = form.cleaned_data['email']
+        c.save()
+        return HttpResponseRedirect(reverse('blog.views.post', args=(post,)))

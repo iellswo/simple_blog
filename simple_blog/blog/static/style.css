@@ -15,7 +15,7 @@ html {
 
 #title {
     background:#6FBFFE;
-    padding: 10px;
+    padding: 25px;
     color: #17111D;
     font-size: 2em;
     font-style:bold;
@@ -113,6 +113,18 @@ html {
     margin-bottom:40px;
 }
 
+.post_body a {
+    color: #1892DB;
+}
+
+.post_body a:hover {
+    color: #362BCE;
+}
+
+.post_body a:current {
+    color: #362BCE;
+}
+
 .comment_counter {
     padding: 5px 5px 5px 5px;
     font-size:.8em;
@@ -131,10 +143,15 @@ html {
 }
 
 .comment_box {
-    margin-left:25px;
+    margin-left:35px;
 }
 
-.comment_body {
+.comment_name {
+    font-style:italic;
+}
+
+.comment_body,
+.comment_form {
     background:#826867;
     border-width:2px;
     border-style:ridge;
@@ -142,4 +159,10 @@ html {
     border-radius:15px;
     padding: 10px 10px 10px 10px;
     color:#17111D;
+    margin-bottom:15px;
+    width:90%;
+}
+
+.comment_form i {
+    color:red;
 }

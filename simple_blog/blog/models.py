@@ -10,12 +10,12 @@ class Post(models.Model):
     
 class Comment(models.Model):
     post = models.ForeignKey(Post, editable=False)
-    content = models.TextField()
+    content = models.TextField('comment')
     name = models.CharField(max_length=80)
     email = models.EmailField()
     def __unicode__(self):
         return self.name
     
-class CommentForm(forms.Form):
+class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment

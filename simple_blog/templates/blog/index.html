@@ -8,7 +8,7 @@
             <div class="posted">posted on {{ post.pub_date }}</div>
         </div>
         <div class="post_body">
-            {{ post.content }}
+            {{ post.content|safe }}
             <div class="comment_counter">
             <a href="post/{{ post.id }}">{{ comment }} comment(s)</a>
             </div>

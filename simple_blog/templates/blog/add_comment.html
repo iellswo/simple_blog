@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form class="comment_form" action="post/{{ id }}/comment/add" method="post">
+<b>Leave a comment:</b>
+{% if error %}<p><i>{{ error_message }}</i></p>{% endif %}
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Comment" />
+</form>
+
+{% endblock %}
