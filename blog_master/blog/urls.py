@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from blog_master.settings import ROOT
 
 from django.contrib import admin
 admin.autodiscover()
@@ -15,7 +16,7 @@ urlpatterns = patterns('blog.views',
                        url(r'^post/(?P<post>\d+)/comment/add/$',
                             'comment_add'),
                             
-                       url(r'^^static/(?P<path>.*)$',
+                       url(r'^static/(?P<path>.*)$',
                         'django.views.static.serve',
-                        {'document_root': ROOT('static')}),
+                        {'document_root': ROOT('blog_master/blog/static')}),
                       )

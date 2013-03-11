@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    {% block title %}The Dlog - A Simple Blog Made With Django!{% endblock %}
+    </title>
+</head>
+<body id="body">
+    <div id="title">
+    {% block visualtitle %}
+    <b>This is a Blog!</b>
+    {% endblock %}
+    </div>
+    <div id="menu">
+    {% block menu %}
+    <ul>
+        <li><a href="/blog/index/">Home</a></li>
+    </ul>
+    {% endblock %}
+    </div>
+    
+    {% block content %}
+    {% endblock %}
+    
+    <link rel="stylesheet" href="/static/style.css" />
+</body>
+</html>
