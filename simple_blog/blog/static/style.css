@@ -19,6 +19,9 @@ html {
     color: #17111D;
     font-size: 2em;
     font-style:bold;
+    border-width:2px;
+    border-style:ridge;
+    border-color:#1892DB;
     border-radius:15px;
 }
 
