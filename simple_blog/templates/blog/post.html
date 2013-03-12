@@ -19,16 +19,36 @@
     No Comments
 {% endif %}
 
+<div id="comment_container">
 <form class="comment_form" action="comment/add/" method="post">
 <b>Leave a comment:</b>
 {% csrf_token %}
 {{ form.as_p }}
 <input type="submit" value="Comment" />
 </form>
+</div>
 
 {% endblock %}
 
 {% block scripts %}
+
+<style>
+.js #comment_container {
+		position: relative;
+		top:20px;
+		width: 850px;
+		display: none;
+}
+
+.close {
+		position: absolute;
+		right: 70px;
+		top: 10px;
+		font-weight: bold;
+		font-family: sans-serif;
+		cursor: pointer;
+}
+</style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>
@@ -39,7 +59,7 @@ $('html').addClass('js');
 
 var contactForm = {
 
-    container: $('#contact'),
+    container: $('#comment_container'),
     
     config: {
         effect: 'slideToggle',
@@ -50,9 +70,9 @@ var contactForm = {
         $.extend(this.config, config);
         
         $('<button></button>', {
-            text: 'Contact Me'
+            text: 'Comment'
         })
-            .insertAfter('article:first')
+            .insertAfter('.post_body')
             .on('click', this.show);
     },
     
