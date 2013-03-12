@@ -28,7 +28,7 @@ def comment_add(request, post):
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if not form.is_valid():
-            return render(request, 'blog/add_comment.html', {'form':form, 'id':post})
+            return render(request, 'blog/add_comment.html', {'form':form, 'id':post, 'error': 'missing values'})
         c = Comment()
         c.post = get_object_or_404(Post, pk=post)
         c.content = form.cleaned_data['content']
