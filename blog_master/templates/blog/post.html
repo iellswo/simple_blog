@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="post_header">
+    <h2><a href="../{{ post.id }}">{{ post.title }}</a></h2>
+    <div class="posted">posted on {{ post.pub_date }}</div>
+</div>
+<div class="post_body">
+    {{ post.content|safe }}
+</div>
+{% if comments %}
+    {% for comment in comments %}
+    <div class="comment_box">
+        <div class = "comment_name">{{ comment.name }} said:</div>
+        <div class = "comment_body">{{ comment.content }}</div>
+    </div>
+    {% endfor %}
+{% else %}
+    No Comments
+{% endif %}
+
+<div id="comment_container">
+<form class="comment_form" action="comment/add/" method="post">
+<b>Leave a comment:</b>
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Comment" />
+</form>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<style>
+.js #comment_container {
+		position: relative;
+		top:20px;
+		width: 850px;
+		display: none;
+}
+
+.close {
+		position: absolute;
+		right: 70px;
+		top: 10px;
+		font-weight: bold;
+		font-family: sans-serif;
+		cursor: pointer;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+
+(function() {
+
+$('html').addClass('js');
+
+var contactForm = {
+
+    container: $('#comment_container'),
+    
+    config: {
+        effect: 'slideToggle',
+        speed: 500
+    },
+
+    init: function(config) {
+        $.extend(this.config, config);
+        
+        $('<button></button>', {
+            text: 'Comment'
+        })
+            .insertAfter('.post_body')
+            .on('click', this.show);
+    },
+    
+    show: function() {
+        var cf = contactForm,
+            container = cf.container,
+            config = cf.config;
+            
+        if ( container.is(':hidden') ) {
+            contactForm.close.call(container);
+            container[config.effect](config.speed);
+        }
+    },
+    
+    close: function() {
+        var $this = $(this); // #contact
+        
+        if ( $this.find('span.close').length ) return;
+        
+        $('<span class=close>X</span>')
+            .prependTo(this)
+            .on('click', function() {
+                $this[contactForm.config.effect](contactForm.config.speed);
+            })
+    }
+};
+
+contactForm.init({
+    speed: 300
+});
+
+})();
+
+
+</script> 
+
+{% endblock %}

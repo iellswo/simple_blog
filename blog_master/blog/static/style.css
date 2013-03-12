@@ -1,0 +1,171 @@
+body,
+html {
+    margin:0;
+    padding:0;
+    color:#000;
+    background:#17111D;
+}
+
+#wrapper {
+    background:#17111D;
+    width:1000px;
+    color:white;
+    margin:0 auto;
+}
+
+#title {
+    background:#6FBFFE;
+    padding: 25px;
+    color: #17111D;
+    font-size: 2em;
+    font-style:bold;
+    border-width:2px;
+    border-style:ridge;
+    border-color:#1892DB;
+    border-radius:15px;
+}
+
+#menu {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    background:#826867;
+    border-bottom: 10px solid #1892DB;
+}
+
+#menu ul /* Primary and secondary links */ {
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+}
+
+#menu li /* A simple method to get navigation links to appear in one line. */ {
+/*  float: left; /* LTR */
+    display: inline;
+    padding: 0 20px 0 0; /* LTR */
+    color: #4C2F31;
+    font-weight: bold;
+}
+
+
+#menu li a {
+    text-decoration: none;
+    color: #4C2F31;
+}
+
+#menu li a:hover {
+    color: #4C2F31;
+    border-bottom: 2px solid #4C2F31;
+}
+
+#menu li a:current {
+    color: #4C2F31;
+    border-bottom: 2px solid #4C2F31;
+}
+
+#content {
+    float:left;
+    width:75%;
+}
+
+#sidebar {
+    background:#4C2F31;
+    border-width:2px;
+    border-style:ridge;
+    border-color:#826867;
+    border-radius:15px;
+    float:right;
+    height:750px;
+    width: 20%;
+}
+
+.post_header {
+    width:500px;
+    height:80px;
+    background:#826867;
+    border-width:2px;
+    border-style:ridge;
+    border-color:#1892DB;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.post_header h2 {
+    text-align:center;
+}
+
+.post_header h2 a {
+    font-size:1.5em;
+    color:#17111D;
+    text-decoration: none;
+}
+
+.posted {
+    font-size:.8em;
+    padding: 0 10px 0 0;
+    text-align:right;
+}
+
+.post_body {
+    background:#4C2F31;
+    border-width:2px;
+    border-style:ridge;
+    border-color:#826867;
+    border-radius:15px;
+    padding: 15px 15px 15px 15px;
+    margin-bottom:40px;
+}
+
+.post_body a {
+    color: #1892DB;
+}
+
+.post_body a:hover {
+    color: #362BCE;
+}
+
+.post_body a:current {
+    color: #362BCE;
+}
+
+.comment_counter {
+    padding: 5px 5px 5px 5px;
+    font-size:.8em;
+}
+
+.comment_counter a {
+    color: #1892DB;
+}
+
+.comment_counter a:hover {
+    color: #362BCE;
+}
+
+.comment_counter a:current {
+    color: #362BCE;
+}
+
+.comment_box {
+    margin-left:35px;
+}
+
+.comment_name {
+    font-style:italic;
+}
+
+.comment_body,
+.comment_form {
+    background:#826867;
+    border-width:2px;
+    border-style:ridge;
+    border-color:#1892DB;
+    border-radius:15px;
+    padding: 10px 10px 10px 10px;
+    color:#17111D;
+    margin-bottom:15px;
+    width:90%;
+}
+
+.comment_form p i {
+    color:red;
+}

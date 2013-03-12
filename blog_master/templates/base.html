@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>
+    {% block title %}A Simple Blog Made With Django!{% endblock %}
+    </title>
+</head>
+<body>
+    <div id="wrapper">
+    <br>
+    
+        <div id="title">
+        {% block visualtitle %}
+        This is a Blog!
+        {% endblock %}
+        </div>
+        <br>
+        <div id="menu">
+        {% block menu %}
+        <ul>
+            <li><a href="/blog/">Home</a></li>
+        </ul>
+        {% endblock %}
+        </div>
+        
+        <br><br>
+        
+        <div id="sidebar">
+        <p>this is the sidebar.</p>
+        </div>
+        
+        <div id="content">
+        {% block content %}
+        {% endblock %}
+        </div>
+    
+    </div>
+<link rel="stylesheet" href="/static/style.css" />
+{% block scripts %}
+{% endblock %}   
+</body>
+</html>
